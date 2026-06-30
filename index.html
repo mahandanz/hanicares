@@ -3,37 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HaniCares — Health Products I Trust, Tips I Live By</title>
-<meta name="description" content="HaniCares shares health tips and recommends health products worth trying — curated from real experience, including life after stroke recovery.">
-<link rel="stylesheet" href="style.css">
+<title>HaniCares — Trusted Hygiene & Personal Care Picks</title>
+<meta name="description" content="HaniCares shares hygiene and personal care product picks plus everyday health tips — curated from real experience, including life after stroke recovery.">
+<link rel="canonical" href="https://hanicares.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hanicares.com/">
+<meta property="og:title" content="HaniCares — Trusted Hygiene & Personal Care Picks">
+<meta property="og:description" content="Curated hygiene and personal care product picks plus honest health tips, from real lived experience.">
+<meta property="og:image" content="https://hanicares.com/banner.png">
+<meta property="og:site_name" content="HaniCares">
+<meta property="og:locale" content="en_MY">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HaniCares — Trusted Hygiene & Personal Care Picks">
+<meta name="twitter:description" content="Curated hygiene and personal care product picks plus honest health tips, from real lived experience.">
+<meta name="twitter:image" content="https://hanicares.com/banner.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;900&family=Lora:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1c2620;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,253,250,.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid #dcebe2;
+}
+.nav-inner{
+  height:58px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;
+}
+.brand{font-family:'Lora',serif;font-weight:700;font-size:18px;color:#1c2620;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:#2f7a5c}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#5a6b64;padding:6px 12px;border-radius:20px;transition:all .18s}
+.nav-links a:hover{color:#1c2620;background:#eaf6f1}
+.nav-links a.cta-nav{background:#2f7a5c;color:#fff;padding:7px 16px}
+.nav-links a.cta-nav:hover{background:#1f5440}
+
+.nav-mobile{display:none}
+
+@media(max-width:600px){
+  .nav-inner{height:46px;padding:0 16px}
+  .brand{font-size:17px}
+  .nav-links{display:none}
+  .nav-mobile{
+    display:flex;
+    border-top:1px solid #dcebe2;
+    background:rgba(250,253,250,.97);
+  }
+  .nav-mobile a{
+    flex:1;text-align:center;
+    font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    text-decoration:none;color:#5a6b64;
+    padding:10px 4px;
+    transition:color .18s, background .18s;
+    white-space:nowrap;
+  }
+  .nav-mobile a:not(:last-child){border-right:1px solid #dcebe2}
+  .nav-mobile a:hover{color:#1c2620;background:#eaf6f1}
+  .nav-mobile a.cta-nav{background:#2f7a5c;color:#fff}
+  .nav-mobile a.cta-nav:hover{background:#1f5440}
+  .hero{margin-top:84px}
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  width:100%;
+  margin-top:58px;
+  overflow:hidden;
+  line-height:0;
+}
+.hero-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* INFO STRIP */
+.info-strip{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 32px;
+  background:#fff;
+  border-top:1px solid #dcebe2;
+}
+.info-strip-left{
+  font-size:15px;font-weight:700;
+  color:#2f7a5c;
+  letter-spacing:.02em;
+}
+.info-strip-right{
+  font-size:15px;font-weight:600;
+  color:#2f7a5c;
+}
+.info-cta{
+  display:inline-block;
+  background:#cc0000;
+  color:#fff;
+  font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  transition:background .18s, transform .15s;
+  white-space:nowrap;
+}
+.info-cta:hover{background:#aa0000;transform:translateY(-1px)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(204,0,0,.5);transform:scale(1)}
+  50%{box-shadow:0 0 0 10px rgba(204,0,0,0);transform:scale(1.04)}
+}
+.info-cta{animation:pulse 1.6s ease-in-out infinite}
+
+/* ABOUT / SEO SECTION */
+.about-section{background:#f7faf8;border-top:1px solid #dcebe2;padding:56px 24px 64px}
+.about-inner{max-width:960px;margin:0 auto}
+.about-block{margin-bottom:32px}
+.about-block h2{font-family:'Lora',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:#1c2620;margin-bottom:14px;line-height:1.3}
+.about-block p{font-size:.95rem;color:#4a564f;line-height:1.8;margin-bottom:12px}
+.about-block p:last-child{margin-bottom:0}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.about-card{background:#fff;border:1px solid #dcebe2;border-radius:12px;padding:20px 18px}
+.about-card-icon{font-size:22px;margin-bottom:10px}
+.about-card h3{font-size:.9rem;font-weight:700;color:#1c2620;margin-bottom:8px}
+.about-card p{font-size:.85rem;color:#5a6b64;line-height:1.7;margin:0}
+.about-trust{border-top:1px solid #dcebe2;padding-top:20px;margin-bottom:0}
+.about-trust p{font-size:.82rem;color:#5a6b64;margin:0}
+.about-trust a{color:#2f7a5c;text-decoration:none}
+.about-trust a:hover{text-decoration:underline}
+
+/* PRODUCTS SECTION */
+.section{padding:56px 24px}
+.section .about-inner h2{font-family:'Lora',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:#1c2620;margin-bottom:28px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#fff;border:1px solid #dcebe2;border-radius:12px;padding:18px}
+.card-img.placeholder{width:100%;height:150px;background:#eaf6f1;border-radius:8px;margin-bottom:14px}
+.card h3{font-size:16px;margin-bottom:6px;color:#1c2620}
+.card-desc{font-size:13px;color:#5a6b64;margin-bottom:10px;line-height:1.6}
+.card-price{font-weight:700;color:#1f5440;margin-bottom:12px}
+.btn-secondary{display:inline-block;border:1px solid #2f7a5c;color:#1f5440;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none}
+.btn-secondary:hover{background:#2f7a5c;color:#fff}
+.section-alt{background:#f7faf8;border-top:1px solid #dcebe2;border-bottom:1px solid #dcebe2}
+.link-arrow{color:#1f5440;font-weight:600;font-size:13px;text-decoration:none}
+
+/* FOOTER */
+footer{background:#15201a;color:rgba(255,255,255,.4);text-align:center;padding:24px;font-size:11px;line-height:1.8}
+footer a{color:rgba(255,255,255,.55);text-decoration:none}
+
+@media(max-width:600px){
+  .info-strip{padding:12px 16px;flex-direction:column;gap:10px;text-align:center}
+  .info-strip-left,.info-strip-right{font-size:13px}
+  .about-section{padding:36px 16px 48px}
+  .about-grid{grid-template-columns:1fr 1fr}
+  .section{padding:36px 16px}
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">Hani<span>Cares</span></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Hani<span>Cares</span></a>
+    <div class="nav-links">
       <a href="products.html">Products</a>
       <a href="tips.html">Health Tips</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <a href="https://wasap.my/" class="cta-nav" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
   </div>
-</header>
+  <div class="nav-mobile">
+    <a href="products.html">Products</a>
+    <a href="tips.html">Health Tips</a>
+    <a href="about.html">About</a>
+    <a href="https://wasap.my/" class="cta-nav" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </div>
+</nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-inner">
-    <h1>Health products I trust.<br>Tips I live by.</h1>
-    <p>Curated recommendations and honest health tips — rooted in real experience, including my own journey as a stroke survivor.</p>
-    <a href="products.html" class="btn-primary">Browse Products</a>
-  </div>
+  <img class="hero-img" src="banner.png" alt="HaniCares — Everyday Hygiene, Made Personal" width="1690" height="950">
 </section>
 
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-strip-left">HANICARES &nbsp;|&nbsp; CLEAN LIVING, TRUSTED PICKS</div>
+  <a href="products.html" class="info-cta">👉 BROWSE PRODUCTS 👈</a>
+  <div class="info-strip-right">since 2026</div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
 <section class="section">
-  <div class="container">
+  <div class="about-inner">
     <h2>Featured Products</h2>
-    <div class="card-grid" id="featured-products">
+    <div class="card-grid">
       <div class="card">
         <div class="card-img placeholder"></div>
         <h3>Product Name</h3>
@@ -59,21 +228,22 @@
   </div>
 </section>
 
+<!-- HEALTH TIPS -->
 <section class="section section-alt">
-  <div class="container">
+  <div class="about-inner">
     <h2>Latest Health Tips</h2>
-    <div class="card-grid" id="featured-tips">
-      <div class="card tip-card">
+    <div class="card-grid">
+      <div class="card">
         <h3>Article Title Here</h3>
         <p class="card-desc">Short excerpt of the health tip or article goes here, just a couple of lines to draw the reader in.</p>
         <a href="#" class="link-arrow">Read more →</a>
       </div>
-      <div class="card tip-card">
+      <div class="card">
         <h3>Article Title Here</h3>
         <p class="card-desc">Short excerpt of the health tip or article goes here, just a couple of lines to draw the reader in.</p>
         <a href="#" class="link-arrow">Read more →</a>
       </div>
-      <div class="card tip-card">
+      <div class="card">
         <h3>Article Title Here</h3>
         <p class="card-desc">Short excerpt of the health tip or article goes here, just a couple of lines to draw the reader in.</p>
         <a href="#" class="link-arrow">Read more →</a>
@@ -82,24 +252,49 @@
   </div>
 </section>
 
-<section class="section trust-strip">
-  <div class="container trust-inner">
-    <h2>Why HaniCares?</h2>
-    <p>I'm a stroke survivor, and that experience changed how I look at health — not just treatment, but prevention and everyday choices. HaniCares is where I share products and tips that have genuinely helped, so you can make informed choices too.</p>
-    <a href="about.html" class="link-arrow">Read my story →</a>
+<!-- SEO / ABOUT CONTENT SECTION -->
+<section class="about-section">
+  <div class="about-inner">
+
+    <div class="about-block">
+      <h2>Hygiene &amp; Personal Care, Curated With Care</h2>
+      <p>HaniCares shares hygiene and personal care products worth trying — hand sanitizers, soaps, skincare basics, and everyday clean-living essentials — alongside practical health tips. Every pick is rooted in real lived experience, not just trends.</p>
+      <p>I'm a stroke survivor, and that experience changed how I look at everyday care — cleanliness, hygiene, and the small habits that protect health. HaniCares is where I share what's genuinely helped me, so you can make informed choices too.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-icon">🧴</div>
+        <h3>Hygiene Essentials</h3>
+        <p>Hand sanitizers, soaps, and everyday personal care products picked for quality and reliability.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🌿</div>
+        <h3>Gentle &amp; Trusted</h3>
+        <p>Products chosen with care — gentle on skin, trusted for daily use by the whole family.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">📋</div>
+        <h3>Health Tips</h3>
+        <p>Practical, honest tips on everyday wellness and care — written from real experience.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">💬</div>
+        <h3>Easy to Reach</h3>
+        <p>Got a question about a product? Reach out directly on WhatsApp — quick, personal replies.</p>
+      </div>
+    </div>
+
+    <div class="about-block about-trust">
+      <p>Information shared on this site is for general wellness purposes only and is not a substitute for professional medical advice. Always consult a qualified healthcare provider. · <a href="https://wasap.my/" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+    </div>
+
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <p class="footer-logo">Hani<span>Cares</span></p>
-      <p class="footer-disclaimer">Information shared on this site is for general wellness purposes only and is not a substitute for professional medical advice. Always consult a qualified healthcare provider.</p>
-    </div>
-    <div class="footer-contact">
-      <a href="https://wasap.my/" target="_blank" rel="noopener">Chat on WhatsApp</a>
-    </div>
-  </div>
+<footer>
+  © 2026 HaniCares &nbsp;·&nbsp; Hygiene &amp; Personal Care, Made Personal<br>
+  <a href="https://wasap.my/" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
 </footer>
 
 </body>
